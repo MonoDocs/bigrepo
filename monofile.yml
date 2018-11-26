@@ -1,4 +1,4 @@
-- repos:
+repos:
   - path: a
     url: https://github.com/MonoDocs/A
     ref: master
