@@ -1,0 +1,10 @@
+- repos:
+  - path: a
+    url: https://github.com/MonoDocs/A
+    ref: master
+  - path: b
+    url: https://github.com/MonoDocs/B
+    ref: master
+  - path: c
+    url: https://github.com/MonoDocs/C
+    ref: master
