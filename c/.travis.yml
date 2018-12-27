@@ -1,0 +1,17 @@
+git:
+  depth: false
+install:
+  # Download monorepo
+  - curl -L https://github.com/GitbookIO/monorepo/releases/download/0.0.2/monorepo_linux_amd64 > ~/monorepo
+  - chmod a+x ~/monorepo
+jobs:
+  include:
+    # For each commit on this repository, we update the bigrepo
+    - stage: Sync with monorepo ⚙️
+      script:
+        - git clone https://github.com/MonoDocs/bigrepo
+        - cd bigrepo
+        - ~/monorepo pull
+        - git add .
+        - git commit -am "Update"
+        - git push https://SamyPesse:$GITHUB_TOKEN@github.com/MonoDocs/bigrepo master
